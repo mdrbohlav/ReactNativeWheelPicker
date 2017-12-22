@@ -144,7 +144,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
     }
 
     @ReactProp(name = "itemTextFontFamily")
-    public void setSelectedItemPosition(WheelPicker wheelPicker, String itemTextFontFamily) {
+    public void setItemTextFontFamily(WheelPicker wheelPicker, String itemTextFontFamily) {
       if (wheelPicker!=null){
         Typeface typeface = ReactFontManager.getInstance().getTypeface(itemTextFontFamily, Typeface.NORMAL, wheelPicker.getContext().getAssets());
         wheelPicker.setTypeface(typeface);
@@ -165,6 +165,23 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
         }
     }
 
+    @ReactProp(name="textAlign")
+    public void setTextAlign(WheelPicker wheelPicker, String textAlign) {
+      if (wheelPicker!=null) {
+        switch (textAlign) {
+          case "left":
+            wheelPicker.setItemAlign(WheelPicker.ALIGN_LEFT);
+            break;
+          case "right":
+            wheelPicker.setItemAlign(WheelPicker.ALIGN_RIGHT);
+            break;
+          case "center":
+              wheelPicker.setItemAlign(WheelPicker.ALIGN_CENTER);
+              break;
+        }
+      }
+    }
+    
     @Override
     public void onItemSelected(WheelPicker picker, Object data, int position) {
         WritableMap event = Arguments.createMap();
