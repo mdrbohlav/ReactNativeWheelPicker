@@ -154,7 +154,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
     @ReactProp(name = "selectedItemPosition")
     public void setSelectedItemPosition(WheelPicker wheelPicker, int selectedItemPosition) {
         if (wheelPicker!=null){
-            wheelPicker.setSelectedItemPosition(selectedItemPosition);
+            wheelPicker.setSelectedItemPosition(selectedItemPosition, false);
         }
     }
 
