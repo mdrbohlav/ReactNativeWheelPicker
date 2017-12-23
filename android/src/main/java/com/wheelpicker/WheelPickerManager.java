@@ -165,8 +165,8 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
         }
     }
 
-    @ReactProp(name="textAlign")
-    public void setTextAlign(WheelPicker wheelPicker, String textAlign) {
+    @ReactProp(name="itemTextAlign")
+    public void setItemTextAlign(WheelPicker wheelPicker, String textAlign) {
       if (wheelPicker!=null) {
         switch (textAlign) {
           case "left":
@@ -176,12 +176,13 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
             wheelPicker.setItemAlign(WheelPicker.ALIGN_RIGHT);
             break;
           case "center":
+          default:
               wheelPicker.setItemAlign(WheelPicker.ALIGN_CENTER);
               break;
         }
       }
     }
-    
+
     @Override
     public void onItemSelected(WheelPicker picker, Object data, int position) {
         WritableMap event = Arguments.createMap();

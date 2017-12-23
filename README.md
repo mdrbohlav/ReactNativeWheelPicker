@@ -6,8 +6,8 @@ A simple Wheel Picker for Android based on https://github.com/AigeStudio/WheelPi
 Also you can use multiple pickers, such as DatePicker or TimePicker
 
 ## Installation Android
-1. `npm install react-native-wheel-picker-android --save`
-2. `react-native link react-native-wheel-picker-android`
+1. `npm install @omerman/react-native-wheel-picker-android --save`
+2. `react-native link @omerman/react-native-wheel-picker-android`
 3. In `android/build.gradle` add the jitpack repository to your project.
 
 ```diff
@@ -25,7 +25,7 @@ allprojects {
 
 ```js
 
-import {WheelPicker, DatePicker, TimePicker} from 'react-native-wheel-picker-android'
+import {WheelPicker, DatePicker, TimePicker} from '@omerman/react-native-wheel-picker-android'
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -126,6 +126,7 @@ import { WheelPicker, DatePicker, TimePicker } from 'react-native-wheel-picker-a
 | itemTextColor | grey | `string` | Wheel Picker's items color  |
 | itemTextSize | 20 | `number` |  Wheel Picker's items text size  |
 | itemTextFontFamily | null | `string` | Wheel Picker's items text font name  |
+| itemTextAlign | `center` | `string` (`left`/`right`/`center`) | Wheel Picker's text alignment  |
 | selectedItemPosition | null | `number` | Select current item position |
 | backgroundColor | transparent | `string` | Wheel Picker background color  |
 
@@ -212,4 +213,4 @@ Callback with event in the form `event = { data: 1, position: 0 }`
 
 ## Questions or suggestions?
 
-Feel free to [open an issue](https://github.com/ElekenAgency/ReactNativeWheelPicker/issues)
+Feel free to [open an issue](https://github.com/omerman/ReactNativeWheelPicker/issues)
