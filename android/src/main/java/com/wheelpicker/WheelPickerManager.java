@@ -8,6 +8,7 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.PixelUtil;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -90,7 +91,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
     @ReactProp(name = "itemSpace")
     public void setItemSpace(WheelPicker wheelPicker, int itemSpace) {
         if (wheelPicker!=null){
-            wheelPicker.setItemSpace(itemSpace);
+            wheelPicker.setItemSpace((int) PixelUtil.toPixelFromDIP(itemSpace));
         }
     }
 
@@ -104,6 +105,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
     @ReactProp(name = "renderIndicator")
     public void setIndicator(WheelPicker wheelPicker, Boolean renderIndicator) {
         if (wheelPicker!=null){
+            wheelPicker.setIndicatorSize((int) PixelUtil.toPixelFromDIP(1));
             wheelPicker.setIndicator(renderIndicator);
         }
     }
@@ -139,7 +141,7 @@ public class WheelPickerManager extends SimpleViewManager<WheelPicker>  implemen
     @ReactProp(name = "itemTextSize")
     public void setItemTextSize(WheelPicker wheelPicker, int itemTextSize) {
         if (wheelPicker!=null){
-            wheelPicker.setItemTextSize(itemTextSize);
+            wheelPicker.setItemTextSize((int) PixelUtil.toPixelFromDIP(itemTextSize));
         }
     }
 
